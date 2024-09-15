@@ -4,11 +4,11 @@ import { Button } from './ui/button'
 import { DialogTrigger } from './ui/dialog'
 import { Progress, ProgressIndicator } from './ui/progress-bar'
 import { Separator } from './ui/separator'
-import { OutlineButton } from './ui/outline-button'
 import { useQuery } from '@tanstack/react-query'
 import { getSummary } from '../http/get-summary'
 import dayjs from 'dayjs'
 import ptBr from 'dayjs/locale/pt-BR'
+import { PendingGoals } from './pending-goals'
 
 dayjs.locale(ptBr)
 
@@ -62,24 +62,7 @@ export function Summary() {
 
       <Separator />
 
-      <div className="flex flex-wrap gap-3">
-        <OutlineButton>
-          <Plus className="gap-3 size-4" />
-          Meditar
-        </OutlineButton>
-        <OutlineButton>
-          <Plus className="gap-3 size-4" />
-          Treinar
-        </OutlineButton>
-        <OutlineButton>
-          <Plus className="gap-3 size-4" />
-          Estudar
-        </OutlineButton>
-        <OutlineButton>
-          <Plus className="gap-3 size-4" />
-          Acordar cedo
-        </OutlineButton>
-      </div>
+      <PendingGoals />
 
       <div className="flex flex-col gap-6">
         <h2 className="text-xl font-medium">Sua semana</h2>
